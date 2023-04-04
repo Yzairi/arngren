@@ -1,0 +1,28 @@
+<dx-data-grid [dataSource]="articles" keyExpr="id" [columns]="columns" 
+(onRowRemoved)="onRowRemoved($event)" 
+(onRowUpdated)="onRowUpdated($event)"
+(onRowInserted)="onRowInserted($event)"
+>
+  <dxo-editing
+  mode="row"
+  [allowAdding]="true"
+  [allowUpdating]="true"
+  [allowDeleting]="true"
+>
+</dxo-editing>
+  <dxo-paging [pageSize]="10"></dxo-paging>
+  <dxo-pager [showPageSizeSelector]="true" [allowedPageSizes]="[5, 10, 20]" [showInfo]="true"></dxo-pager>
+  
+</dx-data-grid>
+
+<!-- <div class="container">
+  <div *ngFor="let article of articles" class="card">
+    <ul>
+      <li>{{ article.name }}</li>
+      <li>{{ article.description }}</li>
+      <li>{{ article.price }}</li>
+      <li>{{ article.quantity }}</li>
+      <img [src]="article.image" style="width: 100px;">
+    </ul>
+  </div>
+</div> -->
